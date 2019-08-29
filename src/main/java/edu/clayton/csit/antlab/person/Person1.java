@@ -5,21 +5,21 @@ package edu.clayton.csit.antlab.person;
  *  returns their name and a
  *  modified string 
  *  
- *  @author Qu
+ *  @author Kenya
  *  @version 1.1
  */
 public class Person1 {
   /** Holds the persons real name */
   private String name;
   	/**
+	 public Person1(String pname) {
+	 name = pname;
+	 }
+	 /**
 	 * The constructor, takes in the persons
 	 * name
 	 * @param pname the person's real name
 	 */
-  public Person1(String pname) {
-    name = pname;
-  }
-  	/**
 	 * This method should take the string
 	 * input and return its characters rotated
 	 * 2 positions.
@@ -30,8 +30,13 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 1 put your implementation here
-	  return null;
+		if (input == null) return null;
+		if (input.length() < 2) return input;
+
+		StringBuilder calculatedString = new StringBuilder();
+		calculatedString.append(input.substring(2));
+		calculatedString.append(input.substring(0, 1));
+		return calculatedString.toString();
 	}
 	
 	/**
